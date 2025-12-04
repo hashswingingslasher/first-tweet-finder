@@ -1,0 +1,144 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # First Tweet Finder - Chrome Extension\
+\
+A Chrome extension that automatically scrolls to the first tweet on any Twitter/X profile page. No API required - uses browser automation to navigate Twitter's interface.\
+\
+## Features\
+\
+- \uc0\u55357 \u56358  **Works on Twitter/X profiles** - Detects profile pages and adds scroll functionality\
+- \uc0\u55357 \u56525  **One-click scrolling** - Floating button appears on profile pages\
+- \uc0\u9889  **Real-time progress** - Shows scrolling progress with cancel option\
+- \uc0\u9881 \u65039  **Configurable settings** - Adjust scroll speed and attempts via popup\
+- \uc0\u55356 \u57263  **Highlights first tweet** - Visual highlight when the oldest tweet is found\
+- \uc0\u55357 \u56561  **Mobile responsive** - Works on both desktop and mobile Twitter\
+\
+## Installation\
+\
+### Method 1: Load as Unpacked Extension (Recommended for testing)\
+\
+1. **Download the extension files:**\
+   - Download all files from the generated extension package\
+   - Create a folder called `first-tweet-finder-extension`\
+   - Save all files in this folder:\
+     - `manifest.json`\
+     - `content.js`\
+     - `popup.html`\
+     - `popup.js`\
+     - `popup.css` \
+     - `styles.css`\
+\
+2. **Load in Chrome:**\
+   - Open Chrome and go to `chrome://extensions/`\
+   - Enable "Developer mode" (toggle in top right)\
+   - Click "Load unpacked"\
+   - Select the folder containing the extension files\
+   - The extension should now appear in your extensions list\
+\
+3. **Pin the extension:**\
+   - Click the extensions icon (puzzle piece) in Chrome toolbar\
+   - Pin "First Tweet Finder" for easy access\
+\
+## How to Use\
+\
+### Method 1: Floating Button\
+1. Navigate to any Twitter profile (e.g., `twitter.com/elonmusk`)\
+2. Look for the floating "\uc0\u55357 \u56525  First Tweet" button on the right side\
+3. Click the button to start automatic scrolling\
+4. Wait for the extension to find and highlight the first tweet\
+\
+### Method 2: Extension Popup\
+1. Click the extension icon in your Chrome toolbar\
+2. The popup will show if you're on a compatible Twitter page\
+3. Click "Scroll to First Tweet" button\
+4. The extension will run in the background\
+\
+## How It Works\
+\
+1. **Page Detection**: Automatically detects Twitter profile pages\
+2. **Progressive Scrolling**: Scrolls down the timeline in chunks\
+3. **Content Loading**: Waits for Twitter's infinite scroll to load new tweets\
+4. **First Tweet Identification**: Finds the chronologically oldest tweet\
+5. **Visual Highlighting**: Highlights and scrolls to the first tweet\
+\
+## Settings\
+\
+Customize the extension behavior via the popup:\
+\
+- **Max Scroll Attempts**: How many times to try scrolling (25-100)\
+  - 25: Fast but may miss older tweets\
+  - 50: Recommended balance\
+  - 100: Thorough but slower\
+\
+- **Scroll Delay**: Time between scroll attempts (1000-3000ms)\
+  - 1000ms: Fast scrolling\
+  - 2000ms: Recommended for stability\
+  - 3000ms: Slow but reliable\
+\
+## Limitations\
+\
+- **Private Accounts**: Cannot access tweets from private accounts\
+- **Rate Limiting**: Twitter may temporarily block excessive scrolling\
+- **Very Old Accounts**: Some accounts with tens of thousands of tweets may not load completely\
+- **Network Speed**: Slower connections may need higher delay settings\
+\
+## Troubleshooting\
+\
+### Extension doesn't appear to work:\
+1. Refresh the Twitter page and try again\
+2. Make sure you're on a profile page (not home timeline)\
+3. Check that the extension is enabled in `chrome://extensions/`\
+4. Try increasing the scroll delay in settings\
+\
+### Scrolling stops too early:\
+1. Increase the "Max scroll attempts" setting\
+2. Use a slower scroll delay for better reliability\
+3. Check your internet connection speed\
+\
+### Button doesn't appear:\
+1. Make sure you're on a Twitter profile URL like `twitter.com/username`\
+2. Refresh the page after installing the extension\
+3. Check browser console for any error messages\
+\
+## Privacy & Security\
+\
+- **No Data Collection**: Extension doesn't collect or store any personal data\
+- **Local Processing**: All scrolling happens locally in your browser\
+- **No External Requests**: Doesn't make API calls or send data anywhere\
+- **Open Source**: Code is transparent and auditable\
+\
+## Technical Details\
+\
+- **Manifest Version**: V3 (latest Chrome extension standard)\
+- **Permissions**: Only `activeTab` and `scripting` for Twitter pages\
+- **Content Script**: Injected only on Twitter/X domains\
+- **Storage**: Uses Chrome's sync storage for settings\
+\
+## Testing\
+\
+To test the extension:\
+\
+1. Install using the instructions above\
+2. Go to a Twitter profile with many tweets (e.g., `twitter.com/twitter`)\
+3. Look for the floating button and click it\
+4. Verify that scrolling begins and eventually stops at oldest tweets\
+5. Check that the oldest tweet gets highlighted\
+\
+## Support\
+\
+If you encounter issues:\
+1. Check the troubleshooting section above\
+2. Verify you're using the latest version\
+3. Test on different Twitter profiles\
+4. Check browser console for error messages\
+\
+---\
+**Version**: 1.0  \
+**Compatible with**: Chrome 88+ (Manifest V3)  \
+**Works on**: twitter.com and x.com\
+}

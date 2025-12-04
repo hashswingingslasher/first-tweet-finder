@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Tweet Finder</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <div class="header-icon">📍</div>
+            <h1 class="popup-title">First Tweet Finder</h1>
+            <p class="popup-subtitle">Find the first tweet on any Twitter profile</p>
+        </header>
+        
+        <main class="popup-content">
+            <div class="status-section">
+                <div class="status-indicator">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span class="status-text" id="statusText">Ready</span>
+                </div>
+            </div>
+            
+            <div class="action-section">
+                <div class="current-page" id="currentPage">
+                    <span class="page-icon">🌐</span>
+                    <span class="page-text">Checking current page...</span>
+                </div>
+                
+                <button class="action-btn" id="scrollBtn" disabled>
+                    <span class="btn-icon">📍</span>
+                    <span class="btn-text">Scroll to First Tweet</span>
+                </button>
+                
+                <div class="progress-section hidden" id="progressSection">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Scrolling...</div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>How it works:</h3>
+                <ul class="info-list">
+                    <li>Navigate to any Twitter profile</li>
+                    <li>Click the floating button or use this popup</li>
+                    <li>The extension will automatically scroll to find the first tweet</li>
+                    <li>The oldest tweet will be highlighted</li>
+                </ul>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Settings:</h3>
+                <div class="setting-item">
+                    <label for="maxAttempts">Max scroll attempts:</label>
+                    <select id="maxAttempts">
+                        <option value="25">25 (Fast)</option>
+                        <option value="50" selected>50 (Recommended)</option>
+                        <option value="100">100 (Thorough)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="scrollDelay">Scroll delay (ms):</label>
+                    <select id="scrollDelay">
+                        <option value="1000">1000 (Fast)</option>
+                        <option value="2000" selected>2000 (Recommended)</option>
+                        <option value="3000">3000 (Slow)</option>
+                    </select>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="popup-footer">
+            <div class="footer-links">
+                <a href="#" id="helpLink">Help</a>
+                <span class="separator">•</span>
+                <a href="#" id="aboutLink">About</a>
+            </div>
+            <div class="version">v1.0</div>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
